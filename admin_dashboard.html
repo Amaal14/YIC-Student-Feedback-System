@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container">
+    <section class="card">
+      <h2>Admin Dashboard</h2>
+      <p>Review overall feedback activity and manage student submissions.</p>
+    </section>
+
+    <section class="dashboard-grid four-cols">
+      <div class="stat-card" onclick="goTo('admin_feedbacks.html')">
+        <h3>Total Feedback</h3>
+        <p id="adminTotal">0</p>
+      </div>
+
+      <div class="stat-card" onclick="goTo('admin_feedbacks.html')">
+        <h3>Pending</h3>
+        <p id="adminPending">0</p>
+      </div>
+
+      <div class="stat-card" onclick="goTo('admin_feedbacks.html')">
+        <h3>Reviewed</h3>
+        <p id="adminReviewed">0</p>
+      </div>
+
+      <div class="stat-card" onclick="goTo('admin_feedbacks.html')">
+        <h3>Resolved</h3>
+        <p id="adminResolved">0</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YIC Student Feedback System</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (requireLogin('admin')) {
+      loadNavbar();
+      loadAdminDashboard();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container">
+    <section class="card">
+      <h2>My Feedback</h2>
+      <p>You can edit or delete feedback only before it is reviewed.</p>
+    </section>
+
+    <div id="myFeedbackList"></div>
+  </main>
+
+  <footer class="bottom-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YIC Student Feedback System</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (requireLogin('student')) {
+      loadNavbar();
+      loadMyFeedback();
+    }
+  </script>
+</body>
+</html>

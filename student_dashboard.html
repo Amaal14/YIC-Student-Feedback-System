@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <main class="container">
+    <section class="card">
+      <div id="welcomeBox"></div>
+      <h2>Student Dashboard</h2>
+      <p>Track your feedback submissions and check the latest updates.</p>
+    </section>
+
+    <section class="dashboard-grid four-cols">
+      <div class="stat-card" onclick="goTo('view_feedback.html')">
+        <h3>Total Feedback</h3>
+        <p id="totalCount">0</p>
+      </div>
+
+      <div class="stat-card" onclick="goTo('view_feedback.html')">
+        <h3>Pending</h3>
+        <p id="pendingCount">0</p>
+      </div>
+
+      <div class="stat-card" onclick="goTo('view_feedback.html')">
+        <h3>Reviewed</h3>
+        <p id="reviewedCount">0</p>
+      </div>
+
+      <div class="stat-card" onclick="goTo('view_feedback.html')">
+        <h3>Resolved</h3>
+        <p id="resolvedCount">0</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Recent Feedback</h3>
+      <div id="feedbackList"></div>
+    </section>
+  </main>
+
+  <footer class="bottom-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YIC Student Feedback System</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (requireLogin('student')) {
+      loadNavbar();
+      loadDashboard();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <main class="center-box auth-wrapper">
+    <section class="card auth-card">
+      <img src="logo.png.png" alt="YIC Logo" class="auth-logo">
+
+      <h2>Login</h2>
+      <p class="form-help">Enter your email and password to continue</p>
+
+      <form onsubmit="return loginUser(event)">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p>Do not have an account? <a href="register.html">Register here</a></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    redirectLoggedInUser();
+  </script>
+</body>
+</html>

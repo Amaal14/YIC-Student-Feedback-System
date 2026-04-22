@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container">
+    <section class="card">
+      <h2>Manage Feedback</h2>
+      <p>Search, filter, update status, reply, or delete feedback submissions.</p>
+    </section>
+
+    <section class="card">
+      <div class="search-row">
+        <input type="text" id="searchInput" placeholder="Search by title, student, category, or message">
+        <select id="filterStatus">
+          <option value="">All Status</option>
+          <option value="Pending">Pending</option>
+          <option value="Reviewed">Reviewed</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+        <button type="button" onclick="searchAdminFeedback()">Search</button>
+      </div>
+    </section>
+
+    <div id="adminFeedbackList"></div>
+  </main>
+
+  <footer class="bottom-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YIC Student Feedback System</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (requireLogin('admin')) {
+      loadNavbar();
+      loadAdminFeedbacks();
+    }
+  </script>
+</body>
+</html>

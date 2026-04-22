@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container">
+    <section class="card">
+      <h2>Submit New Feedback</h2>
+      <p>Please provide clear details to help us improve services and campus experience.</p>
+
+      <form onsubmit="return submitFeedback(event)">
+        <label for="feedbackTitle">Title</label>
+        <input type="text" id="feedbackTitle" placeholder="Example: Slow Wi-Fi in Building A" required>
+
+        <label for="feedbackCategory">Category</label>
+        <select id="feedbackCategory" required>
+          <option value="Course">Course</option>
+          <option value="Service">Service</option>
+          <option value="Facility">Facility</option>
+        </select>
+
+        <label for="feedbackMessage">Message</label>
+        <textarea id="feedbackMessage" placeholder="Write your feedback here..." required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bottom-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YIC Student Feedback System</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (requireLogin('student')) {
+      loadNavbar();
+    }
+  </script>
+</body>
+</html>
